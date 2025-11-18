@@ -4,23 +4,23 @@ import { IPage } from '../../../../../model/plistmodel';
 import { Blog } from '../../../../../model/blog';
 import { BotoneraService } from '../../../../../service/botonera';
 import { neighborhood } from '../../../../../environment/environment';
-import { Botonera } from "../../../botonera/botonera";
+import { BotoneraComponent } from "../../../botonera/botonera";
 
 @Component({
   selector: 'app-plist',
-  imports: [Botonera],
+  imports: [BotoneraComponent],
   templateUrl: './plist.html',
   styleUrl: './plist.css',
 })
 export class PlistBlogPavon {
-
   oPage: IPage<Blog> | null = null;
-  numPage: number=0;
-  numRpp: number=5;
+  numPage: number = 0;
+  numRpp: number = 5;
+  oBotonera: string[] = [];
 
   constructor(private blogService: BlogService, private oBotoneraService: BotoneraService) { }
 
-  oBotonera: string[] = [];
+  
 
   ngOnInit() {
     this.getPage();

@@ -1,23 +1,27 @@
 <nav>
   <ul class="pagination">
-    <li class="page-item" [class.disabled]="numPage==0">
-        <a class="page-link" (click)="goToPage(numPage-1)" href="">
-            Previous
-        </a>
+    <li class="page-item" [class.disabled]="numPage() == 0">
+      <a class="page-link" (click)="goToPage(numPage() - 1)" href="">
+        Previous
+      </a>
     </li>
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-      @for (strBotonera of oBotonera; track strBotonera ) { @if (strBotonera=='...') {
-      <li class="page-item"><span class="page-link">{{strBotonera}}</span></li>
-      }@else {
-      <li class="page-item" [class.active]="-(-strBotonera) == (numPage + 1)">
-        <a class="page-link" (click)="goToPage(-(-strBotonera)-1)" href=""> {{strBotonera}} </a>
-      </li>
-      } }
-      <li class="page-item" [class.disabled]="numPage+1== oPage?.totalPages">
-        <a class="page-link" (click)="goToPage(numPage+1)" href="">
-            Next
+      @for (strBotonera of oBotonera(); track strBotonera) {
+        @if (strBotonera === '...') {
+          <li class="page-item"><span class="page-link">{{ strBotonera }}</span></li>
+        } @else {
+          <li class="page-item" [class.active]="-(-strBotonera) == (numPage() + 1)">
+            <a class="page-link" (click)="goToPage(-(-strBotonera) - 1)" href="">
+              {{ strBotonera }}
+            </a>
+          </li>
+        }
+      }
+      <li class="page-item" [class.disabled]="numPage() + 1 == oPage()?.totalPages">
+        <a class="page-link" (click)="goToPage(numPage() + 1)" href="">
+          Next
         </a>
-    </li>
+      </li>
     </div>
   </ul>
 </nav>
