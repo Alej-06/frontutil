@@ -1,5 +1,3 @@
-<h1>Blog</h1>
-
 <nav>
   <ul class="pagination">
     <li class="page-item" [class.disabled]="numPage==0">
@@ -23,26 +21,3 @@
     </div>
   </ul>
 </nav>
-<app-botonera></app-botonera>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Título</th>
-      <th scope="col">Etiquetas</th>
-      <th scope="col">Creación</th>
-      <th scope="col">Actualización</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (oBlog of oPage?.content; track oBlog.id ) {
-    <tr>
-      <th scope="row">{{ oBlog.id }}</th>
-      <td>{{ oBlog.titulo }}</td>
-      <td>{{ oBlog.etiquetas }}</td>
-      <td>{{ oBlog.fechaCreacion }}</td>
-      <td>{{ oBlog.fechaModificacion }}</td>
-    </tr>
-    }
-  </tbody>
-</table>

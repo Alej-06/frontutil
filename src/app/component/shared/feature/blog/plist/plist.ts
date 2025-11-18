@@ -4,10 +4,11 @@ import { IPage } from '../../../../../model/plistmodel';
 import { Blog } from '../../../../../model/blog';
 import { BotoneraService } from '../../../../../service/botonera';
 import { neighborhood } from '../../../../../environment/environment';
+import { Botonera } from "../../../botonera/botonera";
 
 @Component({
   selector: 'app-plist',
-  imports: [],
+  imports: [Botonera],
   templateUrl: './plist.html',
   styleUrl: './plist.css',
 })
