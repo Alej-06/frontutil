@@ -45,6 +45,7 @@ export class PlistBlogPavon {
   goToPage(numPage:number){
       this.numPage=numPage;
       this.getPage();
+      return false; // EVITA LA ACCIÓN POR DEFECTO DEL NAVEGADOR, ES DECIR, EVITA EL HREF
   }
 
 
